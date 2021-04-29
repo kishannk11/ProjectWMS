@@ -1,0 +1,8 @@
+create table usercomplaits(
+typewaste varchar(200),
+state varchar(200),
+taluku varchar(200),
+city varchar(200),
+near varchar(200));
+
+
