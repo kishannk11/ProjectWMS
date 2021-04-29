@@ -1,0 +1,32 @@
+$compid=$_SESSION["compid"];
+	   
+	   	if($compid==null) {echo "no session is created";}
+	   	
+	   	else { 	
+
+	   		echo "<font color='green'><b>Your post successfully placed</b></font>";
+	   		 echo $compid;
+
+	   		 include 'wmsdb.php';
+			   	$q1="select * from complaints where complaintid=".$compid;
+			   	$r1=mysql_query($q1);
+			   	while($row1=mysql_fetch_array($r1))
+			   	{
+			   		$typeofwaste=$row1["typeofwaste"];
+			   		$wastepic=$row1["wastepic"];
+			   		$district=$row1["district"];
+			   		$taluk=$row1["taluk"];
+			   		$city=$row1["city"];
+			   		$area=$row1["area"];
+			   		$pincode=$row1["pincode"];
+			   	}
+	   	echo "<center><b>".$typeofwaste."</b></center>";
+	   	echo "<a href='".$wastepic."'><img src='".$wastepic."' class='img-thumbnail' alt='error in loading..'></a>";
+	   	echo "<b>Your Post id=</b>".$compid."<br>";
+	   	
+	   	echo "<b>city=</b>".$city."<br>";
+	   	echo "<b>Area=</b>".$area."<br>";
+	   	echo "<b>Pincode=</b>".$pincode."<br>";
+
+	   		  }
+	  
