@@ -111,7 +111,7 @@
 	
 			$pincode=$_POST["T1"];
 			$count=0;
-			$q="select * from complaints where pincode='$pincode' AND status='forwarded'";
+			$q="select * from complaints where pincode='$pincode' AND status='new'";
 			$r=mysqli_query($con,$q);
 			
 		$c=mysqli_num_rows($r);
