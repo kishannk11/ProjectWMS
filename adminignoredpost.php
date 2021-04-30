@@ -113,9 +113,9 @@
 			$pincode=$_POST["T1"];
 			$count=0;
 			$q="select *from complaints where pincode='$pincode' and status='ignored'";
-			$r=mysql_query($q);
+			$r=mysqli_query($con,$q);
 			
-		$c=mysql_num_rows($r);
+		$c=mysqli_num_rows($r);
 		if($c>0)
 		{
 		
@@ -133,7 +133,7 @@
               echo "<tbody>";
 		}    
 		
-		while($row=mysql_fetch_array($r))
+		while($row=mysqli_fetch_array($r))
         {
 			$count=$count+1;
             $cid=$row['complaintid'];
@@ -155,7 +155,7 @@
                echo "</tr>";
 		}
 		if($count==0){ echo "<font color=red><b>No post from this region</b></font>";}
-		mysql_close();
+		mysqli_close($con);
 	}
 
 		?>
