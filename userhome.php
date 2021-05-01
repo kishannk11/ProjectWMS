@@ -87,7 +87,7 @@ session_start();
 				<option value="Biological waste">Biological waste</option>
 				<option value="Animal waste">Animal waste</option>
 				<option value="Medical waste">Medical waste</option>
-				<option value="Plstics">Plstics</option>
+				<option value="Plastics">Plastics</option>
 				<option value="Others">Others</option>
 										
 			</select>
