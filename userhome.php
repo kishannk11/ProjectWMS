@@ -242,7 +242,7 @@ if(isset($_POST['complaint']))
 		 <hr>
 
       <footer>
-        <p align="center">© 2016 swachh bharath.</p>
+        <p align="center">© 2020 swachh bharath.</p>
       </footer>
     
     <!-- Bootstrap core JavaScript
