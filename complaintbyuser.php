@@ -79,8 +79,8 @@
 		include 'wmsdb.php';
 		$cid=$_REQUEST['id'];
         $q="select wastepic from complaints where complaintid='$cid'";
-        $r=mysql_query($q);	  
-		while($row=mysql_fetch_array($r))
+        $r=mysqli_query($con,$q);	  
+		while($row=mysqli_fetch_array($r))
         {
 			$wastepicfromdb=$row['wastepic'];
 		}
@@ -116,8 +116,8 @@
 		$cid=$_REQUEST['id'];
 		
         $q="select * from complaints where complaintid='$cid'";
-        $r=mysql_query($q);	  
-		while($row=mysql_fetch_array($r))
+        $r=mysqli_query($con,$q);	  
+		while($row=mysqli_fetch_array($r))
         {
             $cidfromdb=$row['complaintid'];
 			$postedby=$row['postedby'];
@@ -186,7 +186,7 @@
 				{
 					echo "<font color=green><b>Tis post ".$status."</b></font>";
 				}
-				mysql_close();
+				mysqli_close($con);
 				?>
 				</form>
           </div>
@@ -196,7 +196,7 @@
 		  	  if(isset($_POST['Ignore'])) 
 				{
 						$q="update complaints set status='ignored' where complaintid='$cid'";
-						$r=mysql_query($q);
+						$r=mysqli_query($con,$q);
 						if($r)
 						{
 							echo "<font color=green><b>post Ignored</b></font>";
@@ -208,7 +208,7 @@
 				 if(isset($_POST['fwd'])) 
 				{
 						$q="update complaints set status='forwarded' where complaintid='$cid'";
-						$r=mysql_query($q);
+						$r=mysqli_query($con,$q);
 						if($r)
 						{
 							echo "<font color=green><b>Post Forwarded to maintainance department</b></font>";
