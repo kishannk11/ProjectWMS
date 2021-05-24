@@ -92,7 +92,6 @@ if(isset($_POST['signin']))
 	{
     $_SESSION["email"]=$email;
     $_SESSION["compid"]="";
-		echo"Hi";
 		header('location:userhome.php');
 	}
 	else{
